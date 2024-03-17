@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggregate Calculator</title>
+</head>
+<body>
+    <h2> <center>Aggregate Calculator for NUST </center></h2>
+    <form>
+    Obtained Marks in Matric: <input type="number" id="obtssc">
+    <div></div><br>
+    Total Marks of Matric: <input type="number" id="totalssc"><div></div><br>
+    Obtained Marks in NET: <input type="number" id="net"><div></div><br>
+    Obtained Marks in HSSC: <input type="number" id="obthssc"><div></div><br>
+    Total Marks of HSSC: <input type="number" id="totalhssc"><div></div><br>
+    
+    <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        function calculate(){
+            var obtssc = parseFloat(document.getElementById('obtssc').value);
+            var totalssc = parseFloat(document.getElementById('totalssc').value);
+            var obthssc = parseFloat(document.getElementById('obthssc').value);
+            var totalhssc = parseFloat(document.getElementById('totalhssc').value);
+            var net = parseFloat(document.getElementById('net').value);
+            var result;
+            result = (obtssc/totalssc*10) + (obthssc/totalhssc*15) + net/200*75;
+            document.getElementById('result') .innerText= "Aggreate is:" + result;
+        }
+    </script>
+</body>
+</html>
